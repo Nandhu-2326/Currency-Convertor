@@ -13,7 +13,8 @@ async function start() {
     let data = await res.json();
     displayDropdown(data);
   } catch (error) {
-    body.append(error.message);
+    // body.append(error.message);
+    alert(error.message);
   }
 }
 start();
@@ -66,14 +67,13 @@ async function currency(curr1, curr2, inputs_1) {
       })
       .catch((err) => {
         const h4 = document.querySelector("h4");
-        if (!select[0].value || !select[1].value) {
+        if (select[0].value == "" || select[1].value == "") {
           h4.textContent = "Please Select Country ";
           setTimeout(() => {
             h4.textContent = "";
           }, 2000);
-        }
-        if (err) {
-          h4.textContent = "Network Issue";
+        } else if (err) {
+          h4.textContent = "Network Issue or Please Check Country";
           setTimeout(() => {
             h4.textContent = "";
           }, 2000);
