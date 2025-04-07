@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    background: url( download.gif)  ;
+    background-size: cover; 
+}
+.form-control:focus,.form-select:focus
+{
+    box-shadow: unset !important;
+    border-color:none !important;
+}
+.loader
+{
+    display: none ;
+}
